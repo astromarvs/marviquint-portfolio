@@ -1,26 +1,91 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
+  --background: #F9F6EE;
   --foreground: #171717;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+/* Light Mode (Default) */
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #ffffff;
+  color: #121212;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Dark Mode */
+.dark-mode body {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+/* globals.css */
+
+/* Default (Light Mode) */
+.nav-container {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  display: flex;
+  gap: 1rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 50;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem;
+  border-radius: 50%;
+  color: #333; /* Ensures visibility in light mode */
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-item:hover {
+  background-color: #808080;
+}
+
+.active {
+  background-color: #171717;
+  color: #fff;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+}
+
+/* Dark Mode */
+.dark-mode .nav-item {
+  color: #fff; /* Ensures visibility in dark mode */
+}
+
+.dark-mode .nav-item:hover {
+  background-color: #808080;
+}
+
+.dark-mode .active {
+  background-color: #fff;
+  color: #000;
+}
+
+.dark-mode h5,
+.dark-mode h2 {
+  color: #e0e0e0; /* Ensure headings are readable */
+}
+
+.dark-mode .tech-card {
+  background-color: rgba(255, 255, 255, 0.2); /* Subtle background in dark mode */
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.dark-mode .tech-card:hover {
+  background-color: rgba(255, 255, 255, 0.2);
 }
