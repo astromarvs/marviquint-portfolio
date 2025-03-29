@@ -2,7 +2,7 @@
 
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-import { Home, Sun, Moon, Briefcase, FileText, Mail } from "lucide-react";
+import { Home, Sun, Moon, Briefcase} from "lucide-react";
 
 interface NavProps {
   toggleDarkMode: () => void;
